@@ -1,10 +1,4 @@
-echo "# pt9-gpa-test" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Mashaly25/pt9-gpa-test.git
-git push -u origin mainimport { Grade, SemesterData, StudentData } from '@/types';
+import { Grade, SemesterData, StudentData } from '@/types';
 
 const STORAGE_KEY = 'pt9-gpa-calculator-data';
 
