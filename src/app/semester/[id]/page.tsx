@@ -178,19 +178,16 @@ export default function SemesterPage() {
                       Course Name
                     </th>
                     <th className="px-2 lg:px-6 py-4 text-center text-xs font-medium text-gray-700 uppercase tracking-wider">
-                      Credit Hours
-                    </th>
-                    <th className="px-2 lg:px-6 py-4 text-center text-xs font-medium text-gray-700 uppercase tracking-wider">
                       Percentage
                     </th>
                     <th className="px-2 lg:px-6 py-4 text-center text-xs font-medium text-gray-700 uppercase tracking-wider">
                       Letter Grade
                     </th>
                     <th className="px-2 lg:px-6 py-4 text-center text-xs font-medium text-gray-700 uppercase tracking-wider">
-                      GPA Points
+                      Credit Hours
                     </th>
                     <th className="px-2 lg:px-6 py-4 text-center text-xs font-medium text-gray-700 uppercase tracking-wider">
-                      Actions
+                      GPA Points
                     </th>
                   </tr>
                 </thead>

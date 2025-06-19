@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Course, Grade } from '@/types';
 import { convertPercentageToGrade, validatePercentage } from '@/utils/gpaCalculations';
-import { Trash2 } from 'lucide-react';
+
 
 interface CourseTableRowProps {
   course: Course;
@@ -74,14 +74,7 @@ export default function CourseTableRow({ course, existingGrade, onGradeChange, i
     setIsEditing(false);
   };
 
-  const handleClear = () => {
-    setPercentage('');
-    setLetterGrade('');
-    setGpaPoints(0);
-    setError('');
-    onGradeChange(null);
-    setIsEditing(false);
-  };
+
 
   const getGradeColor = (points: number) => {
     if (points >= 3.7) return 'text-green-600 bg-green-50';
@@ -103,13 +96,6 @@ export default function CourseTableRow({ course, existingGrade, onGradeChange, i
         <div className="text-xs lg:text-sm font-medium text-gray-900 text-left">
           {course.name}
         </div>
-      </td>
-
-      {/* Credit Hours */}
-      <td className="px-2 lg:px-6 py-3 lg:py-4 whitespace-nowrap text-center">
-        <span className="inline-flex items-center px-1.5 lg:px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-          {course.creditHours}
-        </span>
       </td>
 
       {/* Percentage Input */}
@@ -146,6 +132,13 @@ export default function CourseTableRow({ course, existingGrade, onGradeChange, i
         )}
       </td>
 
+      {/* Credit Hours */}
+      <td className="px-2 lg:px-6 py-3 lg:py-4 whitespace-nowrap text-center">
+        <span className="inline-flex items-center px-1.5 lg:px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+          {course.creditHours}
+        </span>
+      </td>
+
       {/* GPA Points */}
       <td className="px-2 lg:px-6 py-3 lg:py-4 whitespace-nowrap text-center">
         {gpaPoints > 0 ? (
@@ -157,20 +150,7 @@ export default function CourseTableRow({ course, existingGrade, onGradeChange, i
         )}
       </td>
 
-      {/* Actions */}
-      <td className="px-2 lg:px-6 py-3 lg:py-4 whitespace-nowrap text-center">
-        <div className="flex items-center justify-center">
-          {percentage && (
-            <button
-              onClick={handleClear}
-              className="text-red-600 hover:text-red-700 transition-colors duration-200 p-1 hover:bg-red-50 rounded"
-              title="Clear grade"
-            >
-              <Trash2 className="h-3 lg:h-4 w-3 lg:w-4" />
-            </button>
-          )}
-        </div>
-      </td>
+
     </tr>
   );
 }
