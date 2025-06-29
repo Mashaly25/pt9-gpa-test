@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "pt9-gpa-clac-test"
-  }
+    "default": "pt-9-gpa",
+    "n": "pt-9-gpa"
+  },
+  "targets": {},
+  "etags": {}
 }
